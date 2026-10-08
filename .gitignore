@@ -1,0 +1,5 @@
+__pycache__/
+.venv/
+*.pyc
+data/community.db
+data/videos_cache.json

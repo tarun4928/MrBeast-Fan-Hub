@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}BEAST — The Growth Story{% endblock %}
+{% block body_class %}home-page{% endblock %}
+{% block content %}
+<section class="hero-home">
+  <div class="thumbnail-wall" aria-hidden="true"></div>
+  <div class="hero-overlay"></div>
+  <div class="brand-stamps" aria-hidden="true">
+    <span class="brand-stamp stamp-1 stamp-mr">MRBEAST</span>
+    <span class="brand-stamp stamp-2 stamp-feast">FEASTABLES</span>
+    <span class="brand-stamp stamp-3 stamp-mr">MRBEAST</span>
+    <span class="brand-stamp stamp-4 stamp-feast">FEASTABLES</span>
+    <span class="brand-stamp stamp-5 stamp-mr">MRBEAST</span>
+    <span class="brand-stamp stamp-6 stamp-mr">MRBEAST</span>
+    <span class="brand-stamp stamp-7 stamp-feast">FEASTABLES</span>
+    <span class="brand-stamp stamp-8 stamp-mr">MRBEAST</span>
+  </div>
+  <div class="shell hero-content">
+    <div class="eyebrow"><span></span> A FAN-MADE MRBEAST EXPERIENCE</div>
+    <div class="hero-kicker">FROM 13-YEAR-OLD UPLOADS TO 500M+ SUBSCRIBERS</div>
+    <h1>MAKE <em>GOOD</em><br>IMPOSSIBLE.</h1>
+    <p class="hero-copy">Explore the videos, experiments, challenges and philanthropic moments that shaped one of YouTube's most extraordinary creator journeys.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="/discover">Explore 100+ videos</a><a class="btn btn-ghost" href="/journey">See the growth story</a></div>
+    <div class="hero-stats"><div><strong>500M+</strong><span>Subscribers scale</span></div><div><strong>1,000+</strong><span>Uploads & counting</span></div><div><strong>14+ yrs</strong><span>of relentless iteration</span></div></div>
+  </div>
+  <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+</section>
+
+<section class="section shell intro-grid">
+  <div><div class="eyebrow muted"><span></span> WHY THIS SITE EXISTS</div><h2>A creator story told through <em>content.</em></h2></div>
+  <div class="intro-copy"><p>MrBeast's growth is interesting because it wasn't one lucky upload. It was years of experimentation, packaging, reinvestment, team-building and increasingly ambitious ideas.</p><p>This site lets you browse the videos first, then zoom out and study the bigger story behind them.</p></div>
+</section>
+
+<section class="section shell feature-grid">
+  <a class="feature-card feature-card--red" href="/discover"><span class="feature-num">01</span><span class="feature-title">THE VIDEO<br>UNIVERSE</span><span class="feature-desc">Search by topic, format, year, era, duration, view band and taste.</span><span class="feature-arrow">↗</span></a>
+  <a class="feature-card feature-card--dark" href="/journey"><span class="feature-num">02</span><span class="feature-title">THE GROWTH<br>JOURNEY</span><span class="feature-desc">Timeline the risks, experiments and milestones that compounded over time.</span><span class="feature-arrow">↗</span></a>
+  <a class="feature-card feature-card--light" href="/join"><span class="feature-num">03</span><span class="feature-title">JOIN THE<br>BEAST MINDSET</span><span class="feature-desc">A working backend form lets visitors join the fan community.</span><span class="feature-arrow">↗</span></a>
+</section>
+
+<section class="section shell impact-section">
+  <div class="impact-copy"><div class="eyebrow muted"><span></span> BEYOND THE SCREEN</div><h2>Turn <em>reach</em> into real-world impact.</h2><p>MrBeast’s story is also the story of using an enormous audience as leverage. Beast Philanthropy describes a model where content revenue funds documented projects, turning views into measurable action.</p><a class="text-link" href="https://www.beastphilanthropy.org/" target="_blank" rel="noreferrer">Explore Beast Philanthropy ↗</a></div>
+  <div class="impact-grid"><div><strong>$40M+</strong><span>raised for clean water</span></div><div><strong>48M+</strong><span>meals delivered</span></div><div><strong>25M+</strong><span>trees planted</span></div><div><strong>25+</strong><span>countries reached</span></div></div>
+</section>
+
+<section class="section shell quote-panel">
+  <div class="quote-mark">“</div><div><p>Don't copy the scale. Copy the obsession with improving the next thing.</p><span>— the mindset this fan-made project is built around</span></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='home.js') }}"></script>{% endblock %}

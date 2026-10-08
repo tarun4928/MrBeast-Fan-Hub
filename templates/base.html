@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}BEAST / A STORY OF SCALE{% endblock %}</title>
+  <meta name="description" content="A fan-made, research-led MrBeast experience exploring the videos, mindset and growth of Jimmy Donaldson.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <div class="noise"></div>
+  <header class="nav-wrap">
+    <nav class="nav shell">
+      <a class="brand" href="/">
+        <span class="brand-mark">B</span>
+        <span><strong>BEAST</strong><small>the growth story</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/discover" class="nav-link">Discover</a>
+        <a href="/journey" class="nav-link">Journey</a>
+        <a href="/join" class="nav-link">Join the community</a>
+      </div>
+      <a class="nav-cta" href="https://www.youtube.com/@MrBeast" target="_blank" rel="noreferrer">Watch MrBeast ↗</a>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="footer shell">
+    <div><strong>BEAST / A STORY OF SCALE</strong><span>Fan-made project. Not affiliated with MrBeast or Beast Industries.</span></div>
+    <div class="footer-links"><a href="https://www.youtube.com/@MrBeast" target="_blank">YouTube</a><a href="https://www.beastphilanthropy.org/" target="_blank">Beast Philanthropy</a><a href="https://socialblade.com/youtube/handle/mrbeast" target="_blank">Channel stats</a></div>
+  </footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

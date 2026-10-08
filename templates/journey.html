@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Journey — MrBeast Growth Story{% endblock %}
+{% block content %}
+<section class="page-hero shell page-hero--journey"><div class="eyebrow"><span></span> THE GROWTH JOURNEY</div><h1>From <em>obsession</em> to global scale.</h1><p>A research-led timeline of the moments, decisions and content eras that shaped Jimmy Donaldson's rise. Video releases sit alongside the milestones so you can see the story without pretending one upload caused one exact subscriber jump.</p></section>
+
+<section class="shell milestone-strip">
+  <div class="milestone-intro"><span>SUBSCRIBER MILESTONES</span><strong>Compounding beats a single viral hit.</strong></div>
+  {% for m in milestones %}
+  <article class="milestone"><span class="milestone-date">{{ m.date }}</span><strong>{{ m.subscribers }}</strong><small>{{ m.title }}</small></article>
+  {% endfor %}
+</section>
+
+<section class="section shell split-story">
+  <div class="story-sticky"><div class="eyebrow muted"><span></span> THE MINDSET</div><h2>Obsess over the next <em>iteration.</em></h2><p>Early on, Donaldson spent years studying YouTube virality and recommendation behaviour with other creators. The long game was not only uploading more; it was learning what made an idea impossible to ignore.</p><div class="principles"><div><span>01</span><strong>Experiment</strong><small>Try formats until something earns attention.</small></div><div><span>02</span><strong>Reinvest</strong><small>Use audience growth to fund bigger ideas.</small></div><div><span>03</span><strong>Scale impact</strong><small>Turn reach into entertainment, brands and philanthropy.</small></div></div></div>
+  <div class="timeline" id="timeline-list">
+    {% for m in milestones %}<article class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">{{m.date}}</div><div class="timeline-card"><div><span class="pill">{{m.subscribers}}</span><h3>{{m.title}}</h3></div><p>{{m.story}}</p></div></article>{% endfor %}
+  </div>
+</section>
+
+<section class="section shell release-context">
+  <div class="eyebrow muted"><span></span> RELEASE × GROWTH CONTEXT</div><h2>See every video in the <em>era</em> it belongs to.</h2><p>Public sources do not provide a trustworthy subscriber delta for every individual upload. Instead, this view places each catalogued video into its actual release year and pairs that content with the closest verified milestone context. That makes the relationship useful without inventing causality.</p>
+  <div id="era-videos" class="era-grid"></div>
+</section>
+{% endblock %}
+{% block scripts %}<script>window.JOURNEY_MILESTONES = {{ milestones | tojson }};</script><script src="{{ url_for('static', filename='journey.js') }}"></script>{% endblock %}

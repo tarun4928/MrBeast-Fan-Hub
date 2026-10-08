@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Join — Beast Community{% endblock %}
+{% block content %}
+<section class="join-wrap shell">
+  <div class="join-copy"><div class="eyebrow"><span></span> COMMUNITY</div><h1>Build your own <em>impossible.</em></h1><p>Get a curated update when the project adds new video data, visual stories and growth-analysis features.</p><div class="join-proof"><span>✓</span><div><strong>Real backend form</strong><small>Your entry is stored in a SQLite database on the Flask server.</small></div></div></div>
+  <form id="join-form" class="join-form">
+    <div class="form-title">JOIN THE LIST</div>
+    <label>Name<input name="name" required placeholder="Your name"></label>
+    <label>Email<input name="email" type="email" required placeholder="you@example.com"></label>
+    <label>Favourite MrBeast flavour<select name="favorite_topic"><option>Challenges</option><option>Philanthropy</option><option>Survival & adventure</option><option>Money & giveaways</option><option>Food & experiments</option><option>Creators & celebrities</option></select></label>
+    <label>Why do you watch? <span class="optional">optional</span><textarea name="message" rows="4" placeholder="What keeps you coming back?"></textarea></label>
+    <button class="btn btn-primary" type="submit">Join the community →</button>
+    <div id="join-status" class="form-status"></div>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='join.js') }}"></script>{% endblock %}

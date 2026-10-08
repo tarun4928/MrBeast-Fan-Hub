@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Discover — MrBeast Videos{% endblock %}
+{% block content %}
+<section class="page-hero shell"><div class="eyebrow"><span></span> THE VIDEO UNIVERSE</div><h1>Find the <em>kind</em> of MrBeast video you want.</h1><p>One catalog, many ways to explore. Combine filters until the exact flavour of chaos, challenge, generosity or adventure you want rises to the top.</p></section>
+<section class="discover-shell shell">
+  <div class="filter-panel">
+    <div class="filter-head"><div><strong id="result-count">Loading videos…</strong><span>real MrBeast metadata with a local fallback</span></div><button id="reset-filters" class="text-btn">Reset filters</button></div>
+    <div class="filter-grid">
+      <label class="filter-wide">Search<input id="search" type="search" placeholder="e.g. island, money, blind, survive…"></label>
+      <label>Category<select id="category"><option value="">All categories</option></select></label>
+      <label>Year<select id="year"><option value="">All years</option></select></label>
+      <label>Era<select id="era"><option value="">All eras</option></select></label>
+      <label>Format<select id="format"><option value="">All formats</option></select></label>
+      <label>Duration<select id="duration"><option value="">Any duration</option></select></label>
+      <label>View band<select id="views"><option value="">Any reach</option></select></label>
+      <label>Sort<select id="sort"><option value="latest">Newest first</option><option value="oldest">Oldest first</option><option value="views">Most views</option><option value="likes">Most likes</option></select></label>
+    </div>
+    <div class="taste-row"><span>Quick taste:</span><button data-taste="high-stakes">High stakes</button><button data-taste="feel-good">Feel-good</button><button data-taste="extreme">Extreme</button><button data-taste="funny">Funny</button><button data-taste="social">Social</button></div>
+  </div>
+  <div id="video-grid" class="video-grid"></div>
+  <div id="empty" class="empty-state hidden"><strong>No videos match those filters.</strong><span>Try removing one or two constraints.</span></div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='discover.js') }}"></script>{% endblock %}
